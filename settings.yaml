@@ -217,9 +217,9 @@ spec:
                 - label: RSS
                   value: i-simple-icons-rss
                 - label: 微信支付
-                  value: i-mingcute-wechat-pay-fill
-                - label: 支付宝
                   value: i-simple-icons-wechat
+                - label: 支付宝
+                  value: i-simple-icons-alipay
             - $formkit: text
               name: name
               label: 名称
@@ -341,9 +341,9 @@ spec:
                 - label: RSS
                   value: i-simple-icons-rss
                 - label: 微信支付
-                  value: i-mingcute-wechat-pay-fill
-                - label: 支付宝
                   value: i-simple-icons-wechat
+                - label: 支付宝
+                  value: i-simple-icons-alipay
             - $formkit: text
               name: name
               label: 名称
