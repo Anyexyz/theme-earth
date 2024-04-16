@@ -5,26 +5,6 @@
 >
   <th:block th:fragment="content">
     <div class="rounded-xl bg-white p-4 dark:bg-slate-800">
-      <h1 class="mb-9 text-2xl font-medium dark:text-slate-50">图库</h1>
-      <div class="mb-8">
-        <nav class="flex flex-wrap gap-4" aria-label="Tabs">
-          <a
-            th:href="@{/photos}"
-            class="rounded bg-gray-100 px-1 py-0.5 text-sm text-gray-900 hover:bg-gray-200 dark:bg-slate-600 dark:text-slate-50 dark:hover:bg-slate-700 dark:hover:text-slate-100"
-            th:classappend="${#lists.isEmpty(param.group) ? '!bg-gray-200 dark:!bg-slate-700 dark:!text-slate-100 ring-2 ring-gray-300 dark:ring-slate-600' : ''}"
-          >
-            <span>全部</span>
-          </a>
-          <a
-            th:each="group : ${photoFinder.groupBy()}"
-            th:href="@{|/photos?group=${group.metadata.name}|}"
-            class="rounded bg-gray-100 px-1 py-0.5 text-sm text-gray-900 hover:bg-gray-200 dark:bg-slate-600 dark:text-slate-50 dark:hover:bg-slate-700 dark:hover:text-slate-100"
-            th:classappend="${#lists.contains(param.group, group.metadata.name) ? '!bg-gray-200 dark:!bg-slate-700 dark:!text-slate-100 ring-2 ring-gray-300 dark:ring-slate-600' : ''}"
-            th:text="${group.spec.displayName}"
-          >
-          </a>
-        </nav>
-      </div>
 
       <div
         id="photos"
@@ -57,5 +37,13 @@
         </a>
       </div>
     </div>
+    <style>
+      @media (min-width: 640px) {
+        .sm\:col-span-3 {
+            grid-column: span 4 / span 4
+        }
+      }
+    </style>
   </th:block>
+  <th:block th:fragment="sidebar" />
 </html>
