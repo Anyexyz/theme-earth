@@ -22,3 +22,9 @@ spec:
   license:
     - name: "GPL-3.0"
       url: "https://github.com/halo-dev/theme-earth/blob/main/LICENSE"
+  customTemplates:
+    page:
+      - name: 友链
+        description: 友链页面，包含评论
+        screenshot: 
+        file: friends.html
