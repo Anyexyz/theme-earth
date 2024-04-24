@@ -159,6 +159,7 @@
         <a
           th:href="@{${moments.prevUrl}}"
           class="whitespace-no-wrap group inline-flex items-center justify-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-1 text-sm font-medium leading-6 text-gray-600 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white"
+          th:attr="style=${moments.hasPrevious()} ? '' : 'color: #ccc; pointer-events: none;'"
         >
           <span class="i-tabler-arrow-left text-lg transition-all group-hover:-translate-x-1"></span>
           <span>上一页</span>
@@ -170,6 +171,7 @@
         <a
           th:href="@{${moments.nextUrl}}"
           class="whitespace-no-wrap group inline-flex items-center justify-center gap-1 rounded-md border border-gray-200 bg-white px-4 py-1 text-sm font-medium leading-6 text-gray-600 shadow-sm hover:bg-gray-50 focus:shadow-none focus:outline-none dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white"
+          th:attr="style=${moments.hasNext()} ? '' : 'color: #ccc; pointer-events: none;'"
         >
           <span>下一页</span>
           <span class="i-tabler-arrow-right text-lg transition-all group-hover:translate-x-1"></span>
