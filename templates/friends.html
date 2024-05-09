@@ -3,6 +3,9 @@
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{modules/layout :: html(title = ${singlePage.spec.title} + ' - ' + ${site.title}, hero = ~{::hero}, content = ~{::content}, head = ~{::head}, footer = ~{::footer}, sidebar = null, contentClass = ${theme.config.layout.content_header} and ${not #strings.isEmpty(singlePage.spec.cover)} ? '!-mt-20' : '')}"
 >
+<th:block th:fragment="head">
+  <link rel="stylesheet" th:href="@{/assets/styles/github-markdown.css?v={version}(version=${theme.spec.version})}" />
+</th:block>
 <th:block th:fragment="content">
     <div class="rounded-xl bg-white p-4 dark:bg-slate-800">
       <h1 class="mb-3 text-2xl font-medium dark:text-slate-50">友链</h1>
