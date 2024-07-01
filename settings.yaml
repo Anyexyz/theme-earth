@@ -85,6 +85,11 @@ spec:
           name: enable_change_color_scheme
           label: 允许访客切换配色
           value: true
+        
+        - $formkit: number
+          name: summary_counts
+          label: 摘要最大字数限制
+          value: 20
 
     - group: post
       label: 文章

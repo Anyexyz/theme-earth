@@ -52,7 +52,12 @@
     >
       <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}" th:title="${post.spec.title}"></a>
     </h1>
-    <p
+    <p th:if="${#strings.length(post.status.excerpt)} > ${theme.config.style.summary_counts}"
+      class="font-sm line-clamp-6 font-light dark:text-slate-200"
+      th:text="${#strings.substring(post.status.excerpt, 0, theme.config.style.summary_counts) + '...'}"
+      th:classappend="${list_layout == 'grid_3' ? ' sm:line-clamp-8' : ''}"
+    ></p>
+    <p th:unless="${#strings.length(post.status.excerpt)} > ${theme.config.style.summary_counts}"
       class="font-sm line-clamp-6 font-light dark:text-slate-200"
       th:text="${post.status.excerpt}"
       th:classappend="${list_layout == 'grid_3' ? ' sm:line-clamp-8' : ''}"
